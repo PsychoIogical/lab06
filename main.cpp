@@ -12,8 +12,7 @@
 
 int main()
 {
-	Queue q;
-	Test myTest(q);
+	Test myTest();
 	Test.runTests();
 	return(0);
 }
