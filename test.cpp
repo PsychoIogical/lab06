@@ -10,7 +10,7 @@ Test::Test() {}
 
 Test::~Test() {}
 
-void runTests() {
+void Test::runTests() {
   test1();
   test2();
   test3();
@@ -41,7 +41,7 @@ bool Test::test2() {
   Queue q;
   q.enqueue(1);
   bool passed = !(q.isEmpty());
-  std::cout<<"Test 2: After adding an item, isEmpty() returns false -> "<<printPassFail(passed)<<"\n"; 
+  std::cout<<"Test 2: After adding an item, isEmpty() returns false -> "<<printPassFail(passed)<<"\n";
 }
 
 //@brief enqueue two items, items are in order.
