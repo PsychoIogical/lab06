@@ -23,6 +23,7 @@ void Test::runTests() {
   test9();
   test10();
   test11();
+  test12();
   std::cout<<"------------------------------------------------\nTests concluded. Goodbye...\n";
 }
 
@@ -146,25 +147,35 @@ bool Test::test9() {
   std::cout<<"\n";
 }
 
-//@brief enqueue a list of nums, correct peekFront.
+//@brief peekFront returns correct value after one enqueue.
 bool Test::test10() {
+  Queue q;
+  q.enqueue(1);
+  bool passed = q.peekFront() == 1;
+  std::cout<<"Test 10: peekFront() returns correct value after one enqueue -> ";
+  printPassFail(passed);
+  std::cout<<"\n";
+}
+
+//@brief enqueue a list of nums, correct peekFront.
+bool Test::test11() {
   Queue q;
   q.enqueue(1);
   q.enqueue(2);
   q.enqueue(3);
   bool passed = q.peekFront() == 1;
-  std::cout<<"Test 10: Enqueue a list of numbers, peekFront() returns correct value -> ";
+  std::cout<<"Test 11: Enqueue a list of numbers, peekFront() returns correct value -> ";
   printPassFail(passed);
   std::cout<<"\n";
 }
 
 //@brief enqueue a list of nums, correct peekFront after a set amount of dequeues.
-bool Test::test11() {
+bool Test::test12() {
   Queue q;
   for(int i = 1 ; i <= 10 ; i++) { q.enqueue(i); }
   for(int i = 1 ; i < 7 ; i++) { q.dequeue(); }
   bool passed = q.peekFront() == 7;
-  std::cout<<"Test 11: Enqueue a list of numbers, correct peekFront() after a set amount of dequeues -> ";
+  std::cout<<"Test 12: Enqueue a list of numbers, correct peekFront() after a set amount of dequeues -> ";
   printPassFail(passed);
   std::cout<<"\n";
 }

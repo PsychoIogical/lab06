@@ -69,13 +69,17 @@ class Test {
     */
     bool test9();
     /**
-    * @brief enqueue a list of nums, correct peekFront.
+    * @brief peekFront returns correct value after one enqueue.
     */
     bool test10();
     /**
-    * @brief enqueue a list of nums, correct peekFront after a set amount of dequeues.
+    * @brief enqueue a list of nums, correct peekFront.
     */
     bool test11();
+    /**
+    * @brief enqueue a list of nums, correct peekFront after a set amount of dequeues.
+    */
+    bool test12();
 
   private:
 
