@@ -1,0 +1,8 @@
+Bug list:
+Summary: This is not a queue, but a stack.
+-A queue works as a First In, First Out (FIFO) data structure. As we can see
+in test 13, we queue 1, 2, then 3, but we are returns 3, 2, then 1. This is
+similar to a stack data structure, which operates with a Last In, First Out
+(LIFO) system. We can also see from Tests 3 and 8 that order is not kept.
+
+-peekFront() is working correctly, but front and back pointers are swapped.

@@ -195,7 +195,6 @@ void Test::test13() {
   bool passed = (val1 == 1 && val2 == 2 && val3 == 3);
   std::cout<<"Test 13: List given to queue is placed correctly -> ";
   printPassFail(passed);
-  std::cout<<"\n";
   std::cout<<"\n\tMy list: 1, 2, 3\n"
            <<"\tQueue: "<<val1<<", "<<val2<<", "<<val3<<"\n";
 }
