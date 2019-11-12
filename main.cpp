@@ -12,7 +12,7 @@
 
 int main()
 {
-	Test myTest();
+	Test myTest;
 	myTest.runTests();
 	return(0);
 }
