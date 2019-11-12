@@ -11,6 +11,7 @@ Test::Test() {}
 Test::~Test() {}
 
 void Test::runTests() {
+  std::cout<<"Running test suite...\n------------------------------------------------\n"
   test1();
   test2();
   test3();
@@ -22,6 +23,7 @@ void Test::runTests() {
   test9();
   test10();
   test11();
+  std::cout<<"------------------------------------------------\nTests concluded. Goodbye...\n";
 }
 
 void Test::printPassFail(bool isPassed) {
@@ -92,17 +94,42 @@ bool Test::test5() {
 
 //@brief enqueue once, dequeue twice, error thrown.
 bool Test::test6() {
-
+  Queue q;
+  bool passed = false;
+  try{
+    q.enqueue(1);
+    q.dequeue();
+    q.dequeue();
+  } catch (const std::runtime_error& e) {
+    passed = true;
+  }
+  std::cout<<"Test 6: Enqueues once, dequeues twice, error thrown -> ";
+  printPassFail(passed);
+  std::cout<<"\n";
 }
 
 //@brief enqueue twice, dequeue once, isEmpty returns false.
 bool Test::test7() {
-
+  Queue q;
+  q.enqueue(1);
+  q.enqueue(2);
+  q.dequeue();
+  bool passed = !(p.isEmpty());
+  std::cout<<"Test 7: Enqueues twice, dequeues once, isEmpty() returns false -> ";
+  printPassFail(passed);
+  std::cout<<"\n";
 }
 
 //@brief enqueue twice, dequeue once, correct item in queue still.
 bool Test::test8() {
-
+  Queue q;
+  q.enqueue(1);
+  q.enqueue(2);
+  q.dequeue();
+  bool passed = q.peekFront() == 2;
+  std::cout<<"Test 8: Enqueue twice, dequeue once, correct item still in queue -> ";
+  printPassFail(passed);
+  std::cout<<"\n";
 }
 
 //@brief peekFront runtime_errors if queue is empty.
