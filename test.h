@@ -35,51 +35,55 @@ class Test {
     /**
     * @brief isEmpty returns true on empty.
     */
-    bool test1();
+    void test1();
     /**
     * @brief After adding an item, isEmpty returns false.
     */
-    bool test2();
+    void test2();
     /**
     * @brief enqueue two items, items are in order.
     */
-    bool test3();
+    void test3();
     /**
     * @brief dequeue runtime_errors if queue is empty.
     */
-    bool test4();
+    void test4();
     /**
     * @brief enqueue once, dequeue once, isEmpty returns true.
     */
-    bool test5();
+    void test5();
     /**
     * @brief enqueue once, dequeue twice, error thrown.
     */
-    bool test6();
+    void test6();
     /**
     * @brief enqueue twice, dequeue once, isEmpty returns false.
     */
-    bool test7();
+    void test7();
     /**
     * @brief enqueue twice, dequeue once, correct item in queue still.
     */
-    bool test8();
+    void test8();
     /**
     * @brief peekFront runtime_errors if queue is empty.
     */
-    bool test9();
+    void test9();
     /**
     * @brief peekFront returns correct value after one enqueue.
     */
-    bool test10();
+    void test10();
     /**
     * @brief enqueue a list of nums, correct peekFront.
     */
-    bool test11();
+    void test11();
     /**
     * @brief enqueue a list of nums, correct peekFront after a set amount of dequeues.
     */
-    bool test12();
+    void test12();
+    /**
+    * @brief List given is held correctly in queue.
+    */
+    void test13();
 
   private:
 

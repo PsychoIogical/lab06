@@ -33,7 +33,7 @@ void Test::printPassFail(bool isPassed) {
 }
 
 //@brief isEmpty returns true on empty.
-bool Test::test1() {
+void Test::test1() {
   Queue q;
   bool passed = (q.isEmpty());
   std::cout<<"Test 1: isEmpty() returns true when empty -> ";
@@ -42,7 +42,7 @@ bool Test::test1() {
 }
 
 //@brief After adding an item, isEmpty returns false.
-bool Test::test2() {
+void Test::test2() {
   Queue q;
   q.enqueue(1);
   bool passed = !(q.isEmpty());
@@ -52,7 +52,7 @@ bool Test::test2() {
 }
 
 //@brief enqueue two items, items are in order.
-bool Test::test3() {
+void Test::test3() {
   Queue q;
   q.enqueue(1);
   q.enqueue(2);
@@ -69,7 +69,7 @@ bool Test::test3() {
 }
 
 //@brief dequeue runtime_errors if queue is empty.
-bool Test::test4() {
+void Test::test4() {
   Queue q;
   bool passed = false;
   try {
@@ -83,7 +83,7 @@ bool Test::test4() {
 }
 
 //@brief enqueue once, dequeue once, isEmpty returns true.
-bool Test::test5() {
+void Test::test5() {
   Queue q;
   q.enqueue(1);
   q.dequeue();
@@ -94,7 +94,7 @@ bool Test::test5() {
 }
 
 //@brief enqueue once, dequeue twice, error thrown.
-bool Test::test6() {
+void Test::test6() {
   Queue q;
   bool passed = false;
   try{
@@ -110,7 +110,7 @@ bool Test::test6() {
 }
 
 //@brief enqueue twice, dequeue once, isEmpty returns false.
-bool Test::test7() {
+void Test::test7() {
   Queue q;
   q.enqueue(1);
   q.enqueue(2);
@@ -122,7 +122,7 @@ bool Test::test7() {
 }
 
 //@brief enqueue twice, dequeue once, correct item in queue still.
-bool Test::test8() {
+void Test::test8() {
   Queue q;
   q.enqueue(1);
   q.enqueue(2);
@@ -134,7 +134,7 @@ bool Test::test8() {
 }
 
 //@brief peekFront runtime_errors if queue is empty.
-bool Test::test9() {
+void Test::test9() {
   Queue q;
   bool passed = false;
   try {
@@ -148,7 +148,7 @@ bool Test::test9() {
 }
 
 //@brief peekFront returns correct value after one enqueue.
-bool Test::test10() {
+void Test::test10() {
   Queue q;
   q.enqueue(1);
   bool passed = q.peekFront() == 1;
@@ -158,7 +158,7 @@ bool Test::test10() {
 }
 
 //@brief enqueue a list of nums, correct peekFront.
-bool Test::test11() {
+void Test::test11() {
   Queue q;
   q.enqueue(1);
   q.enqueue(2);
@@ -170,7 +170,7 @@ bool Test::test11() {
 }
 
 //@brief enqueue a list of nums, correct peekFront after a set amount of dequeues.
-bool Test::test12() {
+void Test::test12() {
   Queue q;
   for(int i = 1 ; i <= 10 ; i++) { q.enqueue(i); }
   for(int i = 1 ; i < 7 ; i++) { q.dequeue(); }
@@ -178,4 +178,23 @@ bool Test::test12() {
   std::cout<<"Test 12: Enqueue a list of numbers, correct peekFront() after a set amount of dequeues -> ";
   printPassFail(passed);
   std::cout<<"\n";
+}
+
+//@brief List given is held correctly in queue.
+void Test::test13() {
+  Queue q;
+  q.enqueue(1);
+  q.enqueue(2);
+  q.enqueue(3);
+  val1 = q.peekFront();
+  q.dequeue();
+  val2 = q.peekFront();
+  q.dequeue();
+  val3 = q.peekFront();
+  bool passed = (val1 == 1 && val2 == 2 && val3 == 3);
+  std::cout<<"Test 13: List given to queue is placed correctly -> ";
+  printPassFail(passed);
+  std::cout<<"\n";
+  std::cout<<"\n\tMy list: 1, 2, 3\n"
+           <<"\tQueue: "<<val1<<", "<<val2<<", "<<val3<<"\n";
 }
