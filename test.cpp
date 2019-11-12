@@ -5,3 +5,13 @@
 */
 
 #include "test.h"
+
+Test::Test(Queue q) {
+  testQueue = q;
+}
+
+Test::~Test() {}
+
+void runTests() {
+  
+}
