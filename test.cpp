@@ -50,17 +50,44 @@ bool Test::test2() {
 
 //@brief enqueue two items, items are in order.
 bool Test::test3() {
-
+  Queue q;
+  q.enqueue(1);
+  q.enqueue(2);
+  bool passed = false;
+  if(q.peekFront() == 1) {
+    q.dequeue();
+    if(q.peekFront() == 2) {
+      passed = true;
+    }
+  }
+  std::cout<<"Test 3: Enqueued two items, items are in order -> ";
+  printPassFail(passed);
+  std::cout<<"\n";
 }
 
 //@brief dequeue runtime_errors if queue is empty.
 bool Test::test4() {
-
+  Queue q;
+  bool passed = false;
+  try {
+    q.dequeue();
+  } catch (const std::except& e) {
+    passed = true;
+  }
+  std::cout<<"Test 4: Dequeue sends a runtime error if queue is empty -> ";
+  printPassFail(passed);
+  std::cout<<"\n";
 }
 
 //@brief enqueue once, dequeue once, isEmpty returns true.
 bool Test::test5() {
-
+  Queue q;
+  q.enqueue(1);
+  q.dequeue();
+  bool passed = q.isEmpty();
+  std::cout<<"Test 5: Enqueues once, dequeues once, isEmpty returns true -> ";
+  printPassFail(passed);
+  std::cout<<"\n";
 }
 
 //@brief enqueue once, dequeue twice, error thrown.
