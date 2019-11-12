@@ -11,7 +11,7 @@ Test::Test() {}
 Test::~Test() {}
 
 void Test::runTests() {
-  std::cout<<"Running test suite...\n------------------------------------------------\n"
+  std::cout<<"Running test suite...\n------------------------------------------------\n";
   test1();
   test2();
   test3();
@@ -114,7 +114,7 @@ bool Test::test7() {
   q.enqueue(1);
   q.enqueue(2);
   q.dequeue();
-  bool passed = !(p.isEmpty());
+  bool passed = !(q.isEmpty());
   std::cout<<"Test 7: Enqueues twice, dequeues once, isEmpty() returns false -> ";
   printPassFail(passed);
   std::cout<<"\n";
