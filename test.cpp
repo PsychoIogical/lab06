@@ -71,7 +71,7 @@ bool Test::test4() {
   bool passed = false;
   try {
     q.dequeue();
-  } catch (const std::except& e) {
+  } catch (const runtime_error& e) {
     passed = true;
   }
   std::cout<<"Test 4: Dequeue sends a runtime error if queue is empty -> ";
