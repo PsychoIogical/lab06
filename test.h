@@ -29,6 +29,7 @@ class Test {
     /**
      * @param isPassed True if test passed
      * @brief Prints Passed or Failed
+     * @note Modelled after Dr. Gibbons' function from lab 02
      */
     void printPassFail(bool isPassed);
 
