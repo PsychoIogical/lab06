@@ -186,11 +186,11 @@ void Test::test13() {
   q.enqueue(1);
   q.enqueue(2);
   q.enqueue(3);
-  val1 = q.peekFront();
+  int val1 = q.peekFront();
   q.dequeue();
-  val2 = q.peekFront();
+  int val2 = q.peekFront();
   q.dequeue();
-  val3 = q.peekFront();
+  int val3 = q.peekFront();
   bool passed = (val1 == 1 && val2 == 2 && val3 == 3);
   std::cout<<"Test 13: List given to queue is placed correctly -> ";
   printPassFail(passed);
