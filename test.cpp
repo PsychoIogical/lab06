@@ -24,6 +24,7 @@ void Test::runTests() {
   test10();
   test11();
   test12();
+  test13();
   std::cout<<"------------------------------------------------\nTests concluded. Goodbye...\n";
 }
 
