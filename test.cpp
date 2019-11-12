@@ -134,15 +134,37 @@ bool Test::test8() {
 
 //@brief peekFront runtime_errors if queue is empty.
 bool Test::test9() {
-
+  Queue q;
+  bool passed = false;
+  try {
+    q.peekFront();
+  } catch (const std::runtime_error& e) {
+    passed = true;
+  }
+  std::cout<<"Test 9: peekFront() runtime_errors if queue is empty -> ";
+  printPassFail(passed);
+  std::cout<<"\n";
 }
 
 //@brief enqueue a list of nums, correct peekFront.
 bool Test::test10() {
-
+  Queue q;
+  q.enqueue(1);
+  q.enqueue(2);
+  q.enqueue(3);
+  bool passed = q.peekFront() == 1;
+  std::cout<<"Test 10: Enqueue a list of numbers, peekFront() returns correct value -> ";
+  printPassFail(passed);
+  std::cout<<"\n";
 }
 
 //@brief enqueue a list of nums, correct peekFront after a set amount of dequeues.
 bool Test::test11() {
-
+  Queue q;
+  for(int i = 1 ; i <= 10 ; i++) { q.enqueue(i); }
+  for(int i = 1 ; i < 7 ; i++) { q.dequeue(); }
+  bool passed = q.peekFront() == 7;
+  std::cout<<"Test 11: Enqueue a list of numbers, correct peekFront() after a set amount of dequeues -> ";
+  printPassFail(passed);
+  std::cout<<"\n";
 }
