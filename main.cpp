@@ -13,6 +13,6 @@
 int main()
 {
 	Test myTest();
-	Test.runTests();
+	myTest.runTests();
 	return(0);
 }
