@@ -17,7 +17,7 @@ class Test {
     /////////////////////////////
     //  Constructor/Deconstructor
     /////////////////////////////
-    Test(Queue q);
+    Test();
     ~Test();
     /////////////////////////////
     //  Test Functions
@@ -26,6 +26,11 @@ class Test {
      * @brief Runs all tests.
      */
     void runTests();
+    /**
+     * @param isPassed True if test passed
+     * @brief Prints Passed or Failed
+     */
+    void printPassFail(bool isPassed);
 
     /**
     * @brief isEmpty returns true on empty.
@@ -73,7 +78,6 @@ class Test {
     bool test11();
 
   private:
-    Queue testQueue;
 
 };
 #endif
