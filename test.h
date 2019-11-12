@@ -8,7 +8,7 @@
 #define TEST_
 
 #include <iostream>
-#include <stexcept>
+#include <stdexcept>
 
 #include "Queue.h"
 
