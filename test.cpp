@@ -33,7 +33,9 @@ void Test::printPassFail(bool isPassed) {
 bool Test::test1() {
   Queue q;
   bool passed = (q.isEmpty());
-  std::cout<<"Test 1: isEmpty() returns true when empty -> "<<printPassFail(passed)<<"\n";
+  std::cout<<"Test 1: isEmpty() returns true when empty -> ";
+  printPassFail(passed);
+  std::cout<<"\n";
 }
 
 //@brief After adding an item, isEmpty returns false.
@@ -41,7 +43,9 @@ bool Test::test2() {
   Queue q;
   q.enqueue(1);
   bool passed = !(q.isEmpty());
-  std::cout<<"Test 2: After adding an item, isEmpty() returns false -> "<<printPassFail(passed)<<"\n";
+  std::cout<<"Test 2: After adding an item, isEmpty() returns false -> ";
+  printPassFail(passed);
+  std::cout<<"\n";
 }
 
 //@brief enqueue two items, items are in order.
