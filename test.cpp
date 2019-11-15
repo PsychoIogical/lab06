@@ -184,17 +184,31 @@ void Test::test12() {
 //@brief List given is held correctly in queue.
 void Test::test13() {
   Queue q;
+  int arr[5];
+  bool passed = true;
   q.enqueue(1);
   q.enqueue(2);
   q.enqueue(3);
-  int val1 = q.peekFront();
-  q.dequeue();
-  int val2 = q.peekFront();
-  q.dequeue();
-  int val3 = q.peekFront();
-  bool passed = (val1 == 1 && val2 == 2 && val3 == 3);
+  q.enqueue(4);
+  q.enqueue(5);
+  for(int i = 0 ; i < 5 ; i++) {
+    arr[i] = q.peekFront();
+    q.dequeue();
+  }
+  int j = 0;
+  while(j < 5) {
+    if(arr[j] != j+1) {
+      passed = false;
+      break;
+    }
+  }
   std::cout<<"Test 13: List given to queue is placed correctly -> ";
   printPassFail(passed);
-  std::cout<<"\n\tMy list: 1, 2, 3\n"
-           <<"\tQueue: "<<val1<<", "<<val2<<", "<<val3<<"\n";
+  std::cout<<"\n\tMy list: 1, 2, 3, 4, 5\n"
+           <<"\tQueue: ";
+  for(int k = 0 ; k < 5 ; k++) {
+    std::cout<<arr[k];
+    if(k == 4) { std::cout<<"\n"; }
+    else { std::cout<<", "; }
+  }
 }
